@@ -1,47 +1,12 @@
 # -*- coding:utf-8 -*-
-import datetime
-import logging
 import os
 import signal
 import shutil
-import filetype
 import psutil
-import time
-import subprocess
+import filetype
 from functools import wraps
-from logging import handlers
 
-import win32api
-
-LOGLEVEL = 'info'
-
-
-def output_log():
-    """
-    日志输出
-    :return: 输出logger对象
-    """
-    level_relations = {
-        'debug': logging.DEBUG,
-        'info': logging.INFO,
-        'warning': logging.WARNING,
-        'error': logging.ERROR,
-        'crit': logging.CRITICAL}
-
-    # 创建Logger
-    logger = logging.getLogger()
-    logger.setLevel(level_relations[LOGLEVEL])
-    time = datetime.date.today()
-    file_name = r'E:/code/practice/rpa/' + '日志' + "/" + "cyclone_main_" + f"{time}" + ".log"
-    # 文件Handlerr
-    fileHandler = logging.handlers.TimedRotatingFileHandler(file_name, when="D", encoding="utf-8")
-    fileHandler.setLevel(level_relations[LOGLEVEL])
-    # Formatter
-    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-    fileHandler.setFormatter(formatter)
-    # 添加到Logger中
-    logger.addHandler(fileHandler)
-    return logger
+from rpa.日志模块.log import output_log
 
 
 def whether_the_path_exists(fun):
@@ -561,8 +526,8 @@ if __name__ == "__main__":
         # file_move(r'C:\Users\zhangxin\Desktop\rpa\2.txt', r'C:\Users\zhangxin\Desktop\rpa\新建文件夹')
         # copy_file(r'C:\Users\zhangxin\Desktop\rpa\2.txt', r'C:\Users\zhangxin\Desktop\rpa\新建文件夹')
         # copy_file_two(r'C:\Users\zhangxin\Desktop\rpa\2.txt', r'C:\Users\zhangxin\Desktop\rpa\2.txt',cover=True)
-        # get_file_size(r'C:\Users\zhangxin\Desktop\rpa\yjk6ml.jpg')
-        # a = get_file_attributes(r'C:\Users\zhangxin\Desktop\rpa\yjk6ml.jpg')
-        pass
+        get_file_size(r'C:\Users\zhangxin\Desktop\rpa\yjk6ml.jpg')
+        # get_file_attributes(r'C:\Users\zhangxin\Desktop\rpa\yjk6ml.jpg')
+        # pass
     except Exception as a:
         print(a)

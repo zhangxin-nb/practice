@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-import os
-
-=======
 # -*- coding:utf-8 -*-
 import os
 import signal
@@ -48,28 +44,14 @@ def whether_the_file_exists(fun):
 
 
 @whether_the_path_exists
->>>>>>> 919dc8407f77ebbe0225ee7d998083714391dfee
 def open_folder(path):
     """
     打开文件夹
     :param path: 文件夹路径
-<<<<<<< HEAD
     :return:
     """
     if not os.path.exists(path):
         raise Exception(u'文件夹路径不存在')
-
-
-if __name__ == "__main__":
-    open_folder('klsadhfj')
-=======
-    :return: 
-    """
-    try:
-        os.startfile(path)
-        return
-    except Exception as e:
-        return e
 
 
 @whether_the_file_exists
@@ -546,4 +528,3 @@ if __name__ == "__main__":
         # pass
     except Exception as a:
         print(a)
->>>>>>> 919dc8407f77ebbe0225ee7d998083714391dfee

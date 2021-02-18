@@ -22,7 +22,8 @@ def output_log():
     if not logger.handlers:
         logger.setLevel(level_relations[LOGLEVEL])
         time = datetime.date.today()
-        file_name = r'E:/code/practice/rpa/' + '日志' + "/" + "cyclone_main_" + f"{time}" + ".log"
+        # file_name = r'E:/code/practice/rpa/' + '日志' + "/" + "cyclone_main_" + f"{time}" + ".log"
+        file_name = r'/home/zx/work/code/practice/rpa/' + '日志' + "/" + "cyclone_main_" + f"{time}" + ".log"
         # 文件Handlerr
         fileHandler = handlers.TimedRotatingFileHandler(file_name, when="D", encoding="utf-8")
         fileHandler.setLevel(level_relations[LOGLEVEL])

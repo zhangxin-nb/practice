@@ -266,4 +266,3 @@ if __name__ == '__main__':
     # pdf.split_file(uuid, pages='2-5', output_path='/home/zx/桌面/rpa/split_file.PDF')
     # pdf.export_page_as_picture(uuid, pages='100', output_path='/home/zx/桌面/rpa')
     pdf.set_password(uuid, '/home/zx/桌面/弘玑AI平台产品使用说明书V1.1.pdf', "123")
-
